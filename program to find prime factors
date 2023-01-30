@@ -1,0 +1,14 @@
+vector<pair<int,int> > prime_factors;
+void factors(int n){
+    int m=n;
+    for(int i=2;i*i<=m;i++)
+    if(n%i==0){
+        int cnt=0;
+        while(n%i==0)
+        cnt++,n/=i;
+        prime_factors.push_back(make_pair(cnt,i));
+    }
+    if(n>1){
+        prime_factors.push_back(make_pair(1,n));
+    }
+}
